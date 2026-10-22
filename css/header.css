@@ -1,0 +1,277 @@
+/* ==========================================================================
+   header.css — Site header with glassmorphism nav, hamburger, theme toggle
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  background: var(--clr-header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--clr-border);
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.header--scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .header__inner {
+    padding-inline: var(--space-xl);
+  }
+}
+
+/* --- Logo --- */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--clr-header-text);
+  z-index: 1001;
+}
+
+.header__logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+}
+
+.header__logo-text {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Navigation --- */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav__link {
+  position: relative;
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nav__link:hover {
+  color: var(--clr-primary);
+  background-color: rgba(var(--clr-primary-rgb), 0.08);
+}
+
+.nav__link--active {
+  color: var(--clr-primary);
+  font-weight: var(--fw-semibold);
+}
+
+.nav__link--active::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+}
+
+/* --- Header actions (theme toggle + CTA) --- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.header__cta {
+  display: none;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-inverse);
+  background: var(--gradient-primary);
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.header__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow);
+  color: var(--clr-text-inverse);
+}
+
+@media (min-width: 768px) {
+  .header__cta {
+    display: inline-block;
+  }
+}
+
+/* --- Theme toggle button --- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--clr-text-muted);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  color: var(--clr-primary);
+  background-color: rgba(var(--clr-primary-rgb), 0.1);
+}
+
+.theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Show moon in light mode, sun in dark mode */
+.theme-toggle__sun { display: none; }
+.theme-toggle__moon { display: block; }
+
+[data-theme="dark"] .theme-toggle__sun { display: block; }
+[data-theme="dark"] .theme-toggle__moon { display: none; }
+
+/* --- Hamburger button --- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  z-index: 1001;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.hamburger:hover {
+  background-color: rgba(var(--clr-primary-rgb), 0.1);
+}
+
+.hamburger__line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--clr-header-text);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-fast);
+}
+
+/* Animate to X when active */
+.hamburger--active .hamburger__line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--active .hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--active .hamburger__line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* --- Mobile navigation overlay --- */
+@media (max-width: 767px) {
+  .nav__list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(80vw, 320px);
+    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: calc(var(--header-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+    background: var(--clr-surface);
+    border-left: 1px solid var(--clr-border);
+    box-shadow: var(--shadow-xl);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+  }
+
+  .nav__list--open {
+    transform: translateX(0);
+  }
+
+  .nav__link {
+    display: block;
+    padding: var(--space-md);
+    font-size: var(--fs-base);
+    border-radius: var(--radius-md);
+  }
+
+  .nav__link--active::after {
+    display: none;
+  }
+
+  .nav__link--active {
+    background-color: rgba(var(--clr-primary-rgb), 0.1);
+  }
+
+  /* Backdrop behind mobile nav */
+  .nav__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+  }
+
+  .nav__backdrop--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav__backdrop {
+    display: none;
+  }
+}

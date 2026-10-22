@@ -1,0 +1,119 @@
+/* ==========================================================================
+   theme.css — Light and dark theme colour palettes via CSS custom properties.
+   Applied before JS loads via <script> in <head> to prevent FOUC.
+   ========================================================================== */
+
+/* --- Light theme (default) --- */
+:root,
+[data-theme="light"] {
+  /* Primary palette */
+  --clr-primary: #6C63FF;
+  --clr-primary-light: #8B83FF;
+  --clr-primary-dark: #5046E5;
+  --clr-primary-rgb: 108, 99, 255;
+
+  /* Secondary palette */
+  --clr-secondary: #3B82F6;
+  --clr-secondary-light: #60A5FA;
+  --clr-secondary-dark: #2563EB;
+
+  /* Accent */
+  --clr-accent: #F59E0B;
+  --clr-accent-light: #FBBF24;
+
+  /* Surfaces */
+  --clr-bg: #F8F9FC;
+  --clr-bg-alt: #FFFFFF;
+  --clr-surface: #FFFFFF;
+  --clr-surface-hover: #F1F3F9;
+  --clr-surface-elevated: #FFFFFF;
+
+  /* Text */
+  --clr-heading: #1A1A2E;
+  --clr-text: #374151;
+  --clr-text-muted: #6B7280;
+  --clr-text-inverse: #FFFFFF;
+
+  /* Borders */
+  --clr-border: #E5E7EB;
+  --clr-border-light: #F3F4F6;
+
+  /* Semantic colours */
+  --clr-success: #10B981;
+  --clr-error: #EF4444;
+  --clr-warning: #F59E0B;
+  --clr-info: #3B82F6;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #6C63FF 0%, #3B82F6 100%);
+  --gradient-hero: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  --gradient-card: linear-gradient(180deg, rgba(108, 99, 255, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+  --gradient-text: linear-gradient(135deg, #6C63FF, #3B82F6);
+
+  /* Header / footer */
+  --clr-header-bg: rgba(255, 255, 255, 0.85);
+  --clr-header-text: #1A1A2E;
+  --clr-footer-bg: #1A1A2E;
+  --clr-footer-text: #D1D5DB;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 30px rgba(108, 99, 255, 0.15);
+}
+
+/* --- Dark theme --- */
+[data-theme="dark"] {
+  /* Primary palette */
+  --clr-primary: #8B83FF;
+  --clr-primary-light: #A5A0FF;
+  --clr-primary-dark: #6C63FF;
+  --clr-primary-rgb: 139, 131, 255;
+
+  /* Secondary */
+  --clr-secondary: #60A5FA;
+  --clr-secondary-light: #93C5FD;
+  --clr-secondary-dark: #3B82F6;
+
+  /* Accent */
+  --clr-accent: #FBBF24;
+  --clr-accent-light: #FCD34D;
+
+  /* Surfaces */
+  --clr-bg: #0F0F1A;
+  --clr-bg-alt: #1A1A2E;
+  --clr-surface: #1E1E35;
+  --clr-surface-hover: #2A2A45;
+  --clr-surface-elevated: #252542;
+
+  /* Text */
+  --clr-heading: #F1F5F9;
+  --clr-text: #CBD5E1;
+  --clr-text-muted: #94A3B8;
+  --clr-text-inverse: #0F0F1A;
+
+  /* Borders */
+  --clr-border: #2A2A45;
+  --clr-border-light: #1E1E35;
+
+  /* Semantic */
+  --clr-success: #34D399;
+  --clr-error: #F87171;
+  --clr-warning: #FBBF24;
+  --clr-info: #60A5FA;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #8B83FF 0%, #60A5FA 100%);
+  --gradient-hero: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 50%, #16213E 100%);
+  --gradient-card: linear-gradient(180deg, rgba(139, 131, 255, 0.08) 0%, rgba(96, 165, 250, 0.08) 100%);
+  --gradient-text: linear-gradient(135deg, #8B83FF, #60A5FA);
+
+  /* Header / footer */
+  --clr-header-bg: rgba(15, 15, 26, 0.9);
+  --clr-header-text: #F1F5F9;
+  --clr-footer-bg: #0A0A14;
+  --clr-footer-text: #94A3B8;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 30px rgba(139, 131, 255, 0.2);
+}

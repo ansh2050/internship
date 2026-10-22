@@ -1,0 +1,249 @@
+/* ==========================================================================
+   about.css — About page: hero banner, mission/vision, team cards, gallery
+   ========================================================================== */
+
+/* --- Page hero banner (reusable across inner pages) --- */
+.page-hero {
+  padding-top: calc(var(--header-height) + var(--space-3xl));
+  padding-bottom: var(--space-3xl);
+  background: var(--gradient-hero);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero__title {
+  color: #fff;
+  margin-bottom: var(--space-md);
+}
+
+.page-hero__breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.page-hero__breadcrumb a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.page-hero__breadcrumb a:hover {
+  color: var(--clr-primary-light);
+}
+
+.page-hero__separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- About intro --- */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-intro {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-intro__image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-intro__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-intro__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* --- Mission / Vision --- */
+.values {
+  background: var(--clr-bg-alt);
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.values__card {
+  padding: var(--space-2xl);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.values__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.values__icon {
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--space-md);
+}
+
+.values__card-title {
+  margin-bottom: var(--space-md);
+}
+
+.values__card-text {
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+}
+
+/* --- Team section --- */
+.team__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 480px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.team__card {
+  text-align: center;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.team__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.team__card-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.team__card-info {
+  padding: var(--space-lg);
+}
+
+.team__card-name {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.team__card-role {
+  font-size: var(--fs-sm);
+  color: var(--clr-primary);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-sm);
+}
+
+.team__card-bio {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+}
+
+/* --- Gallery (CSS Grid) --- */
+.gallery {
+  background: var(--clr-bg-alt);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  /* Make first item span 2 rows for visual interest */
+  .gallery__item:first-child {
+    grid-row: 1 / 3;
+  }
+}
+
+.gallery__item {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery__item:hover .gallery__overlay {
+  opacity: 1;
+}
+
+.gallery__caption {
+  color: #fff;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+}

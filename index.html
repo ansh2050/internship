@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelCraft Studio — Creative Web Design &amp; Development</title>
+  <meta name="description" content="PixelCraft Studio crafts stunning websites and digital experiences. We specialise in web design, development, branding, and digital strategy.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PixelCraft Studio — Creative Web Design &amp; Development">
+  <meta property="og:description" content="We craft stunning websites and digital experiences that drive results.">
+  <meta property="og:image" content="assets/images/hero_banner.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Prevent FOUC: apply saved theme before CSS paints -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('pixelcraft-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <!-- Skip link (a11y) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="PixelCraft Studio home">
+        <img src="assets/icons/logo.svg" alt="" class="header__logo-icon" width="36" height="36">
+        <span class="header__logo-text">PixelCraft</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav__list" id="nav-list" role="list">
+          <li><a href="index.html" class="nav__link nav__link--active" aria-current="page">Home</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a href="contact.html" class="header__cta">Get a Quote</a>
+
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-list">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="assets/images/hero_banner.webp" alt="" class="hero__bg-image" width="1376" height="768" aria-hidden="true">
+        <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+        <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+        <div class="hero__orb hero__orb--3" aria-hidden="true"></div>
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            Available for new projects
+          </div>
+          <h1 class="hero__title">
+            We Build <span class="hero__title-gradient">Digital Experiences</span> That Inspire
+          </h1>
+          <p class="hero__description">
+            PixelCraft Studio transforms bold ideas into pixel-perfect websites and applications. From concept to launch, we craft every detail with precision and purpose.
+          </p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg">Start a Project</a>
+            <a href="services.html" class="btn btn--outline btn--lg hero__btn--outline">Our Services</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        Scroll
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Intro / Why choose us -->
+    <section class="section intro" id="intro">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">Why Choose Us</span>
+          <h2 class="section__title">Crafting Digital Excellence</h2>
+          <p class="section__description">We blend creativity with technology to deliver websites that look stunning and perform flawlessly across every device.</p>
+        </div>
+        <div class="intro__grid">
+          <div class="intro__item">
+            <div class="intro__icon">
+              <img src="assets/icons/design.svg" alt="" width="32" height="32">
+            </div>
+            <h3>Stunning Design</h3>
+            <p class="card__text">Every project starts with a custom design tailored to your brand identity and audience expectations.</p>
+          </div>
+          <div class="intro__item">
+            <div class="intro__icon">
+              <img src="assets/icons/code.svg" alt="" width="32" height="32">
+            </div>
+            <h3>Clean Code</h3>
+            <p class="card__text">We write semantic, accessible, and performant code that search engines and users both appreciate.</p>
+          </div>
+          <div class="intro__item">
+            <div class="intro__icon">
+              <img src="assets/icons/mobile.svg" alt="" width="32" height="32">
+            </div>
+            <h3>Fully Responsive</h3>
+            <p class="card__text">From phones to ultrawide monitors, your site will look and feel perfect on every screen size.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Highlights -->
+    <section class="section highlights" id="highlights">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">What We Do</span>
+          <h2 class="section__title">Our Core Services</h2>
+          <p class="section__description">A full spectrum of digital services to bring your vision to life.</p>
+        </div>
+        <div class="highlights__grid">
+          <article class="card">
+            <div class="card__icon">
+              <img src="assets/icons/design.svg" alt="" width="28" height="28">
+            </div>
+            <h3 class="card__title">UI/UX Design</h3>
+            <p class="card__text">User-centred interfaces that balance beauty and usability, backed by research and tested with real users.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">
+              <img src="assets/icons/code.svg" alt="" width="28" height="28">
+            </div>
+            <h3 class="card__title">Web Development</h3>
+            <p class="card__text">Fast, accessible websites built with modern standards — HTML, CSS, and JavaScript that just works.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">
+              <img src="assets/icons/branding.svg" alt="" width="28" height="28">
+            </div>
+            <h3 class="card__title">Brand Strategy</h3>
+            <p class="card__text">From logos to colour palettes, we create cohesive brand identities that tell your unique story.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animated Stats -->
+    <section class="section stats" id="stats">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item">
+            <div class="stats__number" data-target="150" data-suffix="+">0</div>
+            <div class="stats__label">Projects Delivered</div>
+          </div>
+          <div class="stats__item">
+            <div class="stats__number" data-target="98" data-suffix="%">0</div>
+            <div class="stats__label">Client Satisfaction</div>
+          </div>
+          <div class="stats__item">
+            <div class="stats__number" data-target="12" data-suffix="">0</div>
+            <div class="stats__label">Team Members</div>
+          </div>
+          <div class="stats__item">
+            <div class="stats__number" data-target="8" data-suffix="+">0</div>
+            <div class="stats__label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Carousel -->
+    <section class="section portfolio" id="portfolio">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">Our Work</span>
+          <h2 class="section__title">Recent Projects</h2>
+          <p class="section__description">A selection of our favourite projects — each one a unique collaboration with ambitious clients.</p>
+        </div>
+        <div class="carousel" id="carousel" aria-label="Project showcase carousel">
+          <div class="carousel__track" id="carousel-track">
+            <div class="carousel__slide">
+              <img src="assets/images/portfolio_web_design.webp" alt="E-commerce website design for Aesthetica, featuring an elegant winter collection layout" width="1200" height="896" loading="lazy">
+            </div>
+            <div class="carousel__slide">
+              <img src="assets/images/portfolio_mobile_app.webp" alt="QuickBites food delivery mobile app with vibrant orange interface" width="1200" height="896" loading="lazy">
+            </div>
+            <div class="carousel__slide">
+              <img src="assets/images/portfolio_dashboard.webp" alt="Nexus Analytics dark-theme dashboard with charts and data visualisations" width="1200" height="896" loading="lazy">
+            </div>
+            <div class="carousel__slide">
+              <img src="assets/images/portfolio_branding.webp" alt="Aurora Creative brand identity design with business cards and stationery" width="1200" height="896" loading="lazy">
+            </div>
+            <div class="carousel__slide">
+              <img src="assets/images/portfolio_landing.webp" alt="InnovateHQ SaaS landing page with gradient hero section" width="1200" height="896" loading="lazy">
+            </div>
+            <div class="carousel__slide">
+              <img src="assets/images/portfolio_social.webp" alt="Creative Hub social media template collection with pastel colours" width="1200" height="896" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" id="carousel-prev" type="button" aria-label="Previous slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="carousel__btn carousel__btn--next" id="carousel-next" type="button" aria-label="Next slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+        <div class="carousel__dots" id="carousel-dots" role="tablist" aria-label="Carousel navigation"></div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section cta" id="cta">
+      <div class="cta__orb cta__orb--1" aria-hidden="true"></div>
+      <div class="cta__orb cta__orb--2" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta__content">
+          <h2 class="cta__title">Ready to Start Your Next Project?</h2>
+          <p class="cta__text">Let us turn your ideas into reality. Get in touch today for a free consultation and discover how we can help your business grow online.</p>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg">Get a Free Quote</a>
+            <a href="services.html" class="btn btn--outline btn--lg hero__btn--outline">View Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="assets/icons/logo.svg" alt="" class="footer__logo-icon" width="32" height="32">
+            <span class="footer__logo-text">PixelCraft Studio</span>
+          </a>
+          <p class="footer__tagline">We craft pixel-perfect digital experiences that drive results. From concept to code, every detail matters.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Follow us on Twitter">
+              <svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow us on LinkedIn">
+              <svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow us on GitHub">
+              <svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer__column-title">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="services.html" class="footer__link">Services</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="footer__column-title">Services</h3>
+          <ul class="footer__links">
+            <li><a href="services.html" class="footer__link">Web Design</a></li>
+            <li><a href="services.html" class="footer__link">Development</a></li>
+            <li><a href="services.html" class="footer__link">Branding</a></li>
+            <li><a href="services.html" class="footer__link">SEO</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="footer__column-title">Get in Touch</h3>
+          <ul class="footer__links">
+            <li><a href="mailto:hello@pixelcraft.studio" class="footer__link">hello@pixelcraft.studio</a></li>
+            <li><a href="tel:+1234567890" class="footer__link">+1 (234) 567-890</a></li>
+            <li><span class="footer__link">123 Creative Lane, Design City</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2024 PixelCraft Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Modal: Request a Quote -->
+  <div class="modal" id="quote-modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+    <div class="modal__backdrop" id="modal-backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modal-close" type="button" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h2 class="modal__title" id="modal-title">Request a Quote</h2>
+      <p style="color:var(--clr-text-muted); margin-bottom:var(--space-lg);">Fill in your details and we will get back to you within 24 hours.</p>
+      <form id="quote-form" novalidate>
+        <div class="form__group">
+          <label for="quote-name" class="form__label">Full Name</label>
+          <input type="text" id="quote-name" class="form__input" placeholder="Your name" required>
+        </div>
+        <div class="form__group">
+          <label for="quote-email" class="form__label">Email</label>
+          <input type="email" id="quote-email" class="form__input" placeholder="you@company.com" required>
+        </div>
+        <div class="form__group">
+          <label for="quote-project" class="form__label">Project Details</label>
+          <textarea id="quote-project" class="form__textarea" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary" style="width:100%;">Send Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts (placeholder for M2) -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

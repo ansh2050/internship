@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — PixelCraft Studio</title>
+  <meta name="description" content="Get in touch with PixelCraft Studio. Fill out our contact form or visit our office. We respond within 24 hours.">
+
+  <meta property="og:title" content="Contact Us — PixelCraft Studio">
+  <meta property="og:description" content="Ready to start your project? Contact PixelCraft Studio today.">
+  <meta property="og:image" content="assets/images/hero_banner.webp">
+  <meta property="og:type" content="website">
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('pixelcraft-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="PixelCraft Studio home">
+        <img src="assets/icons/logo.svg" alt="" class="header__logo-icon" width="36" height="36">
+        <span class="header__logo-text">PixelCraft</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav__list" id="nav-list" role="list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--active" aria-current="page">Contact</a></li>
+        </ul>
+        <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="contact.html" class="header__cta">Get a Quote</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-list">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Contact Us</h1>
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="page-hero__separator">/</span>
+          <span>Contact</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Contact Form + Info -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">Get in Touch</span>
+          <h2 class="section__title">We Would Love to Hear From You</h2>
+          <p class="section__description">Have a project in mind or just want to say hello? Fill out the form below and we will get back to you within 24 hours.</p>
+        </div>
+        <div class="contact__grid">
+          <!-- Form -->
+          <div class="contact-form">
+            <h3 class="contact-form__title">Send Us a Message</h3>
+            <form id="contact-form" novalidate>
+              <div class="form__group">
+                <label for="contact-name" class="form__label">Name</label>
+                <input type="text" id="contact-name" name="name" class="form__input" placeholder="Your full name" required minlength="2" autocomplete="name">
+                <p class="form__error" id="name-error" role="alert">Please enter your name (at least 2 characters, letters and spaces only).</p>
+              </div>
+              <div class="form__group">
+                <label for="contact-email" class="form__label">Email</label>
+                <input type="email" id="contact-email" name="email" class="form__input" placeholder="you@example.com" required autocomplete="email">
+                <p class="form__error" id="email-error" role="alert">Please enter a valid email address.</p>
+              </div>
+              <div class="form__group">
+                <label for="contact-phone" class="form__label">Phone</label>
+                <input type="tel" id="contact-phone" name="phone" class="form__input" placeholder="1234567890" required autocomplete="tel">
+                <p class="form__error" id="phone-error" role="alert">Please enter a valid 10-digit phone number.</p>
+              </div>
+              <div class="form__group">
+                <label for="contact-message" class="form__label">Message</label>
+                <textarea id="contact-message" name="message" class="form__textarea" placeholder="Tell us about your project..." required minlength="10"></textarea>
+                <p class="form__error" id="message-error" role="alert">Please enter your message (at least 10 characters).</p>
+              </div>
+              <button type="submit" class="btn btn--primary" id="contact-submit" style="width:100%;">Send Message</button>
+              <div class="form__success" id="form-success" role="status">
+                ✓ Thank you! Your message has been sent successfully. We will get back to you soon.
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="contact-info__card">
+              <div class="contact-info__icon">
+                <img src="assets/icons/email.svg" alt="" width="24" height="24">
+              </div>
+              <div>
+                <p class="contact-info__label">Email</p>
+                <a href="mailto:hello@pixelcraft.studio" class="contact-info__value">hello@pixelcraft.studio</a>
+              </div>
+            </div>
+            <div class="contact-info__card">
+              <div class="contact-info__icon">
+                <img src="assets/icons/phone.svg" alt="" width="24" height="24">
+              </div>
+              <div>
+                <p class="contact-info__label">Phone</p>
+                <a href="tel:+1234567890" class="contact-info__value">+1 (234) 567-890</a>
+              </div>
+            </div>
+            <div class="contact-info__card">
+              <div class="contact-info__icon">
+                <img src="assets/icons/location.svg" alt="" width="24" height="24">
+              </div>
+              <div>
+                <p class="contact-info__label">Office</p>
+                <p class="contact-info__value">123 Creative Lane, Design City, CA 90210</p>
+              </div>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0197!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1"
+                width="600"
+                height="300"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="PixelCraft Studio office location on Google Maps"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="assets/icons/logo.svg" alt="" class="footer__logo-icon" width="32" height="32">
+            <span class="footer__logo-text">PixelCraft Studio</span>
+          </a>
+          <p class="footer__tagline">We craft pixel-perfect digital experiences that drive results. From concept to code, every detail matters.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Follow us on Twitter"><svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="footer__social-link" aria-label="Follow us on LinkedIn"><svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+            <a href="#" class="footer__social-link" aria-label="Follow us on GitHub"><svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__column-title">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="services.html" class="footer__link">Services</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__column-title">Services</h3>
+          <ul class="footer__links">
+            <li><a href="services.html" class="footer__link">Web Design</a></li>
+            <li><a href="services.html" class="footer__link">Development</a></li>
+            <li><a href="services.html" class="footer__link">Branding</a></li>
+            <li><a href="services.html" class="footer__link">SEO</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__column-title">Get in Touch</h3>
+          <ul class="footer__links">
+            <li><a href="mailto:hello@pixelcraft.studio" class="footer__link">hello@pixelcraft.studio</a></li>
+            <li><a href="tel:+1234567890" class="footer__link">+1 (234) 567-890</a></li>
+            <li><span class="footer__link">123 Creative Lane, Design City</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2024 PixelCraft Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
