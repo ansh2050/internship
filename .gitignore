@@ -1,0 +1,14 @@
+# Environment and API keys
+js/config.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+
+# Node / Scratch files
+node_modules/
+npm-debug.log*

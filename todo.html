@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Tasks — PixelCraft Studio</title>
+  <meta name="description" content="Manage your creative tasks and client deliverables with PixelCraft Studio's interactive task manager.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Studio Tasks — PixelCraft Studio">
+  <meta property="og:description" content="Interactive project task manager for creative teams and design deliverables.">
+  <meta property="og:type" content="website">
+
+  <!-- Prevent FOUC -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('pixelcraft-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/todo.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="PixelCraft Studio home">
+        <img src="assets/icons/logo.svg" alt="" class="header__logo-icon" width="36" height="36">
+        <span class="header__logo-text">PixelCraft</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav__list" id="nav-list" role="list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="weather.html" class="nav__link">Weather</a></li>
+          <li><a href="todo.html" class="nav__link nav__link--active" aria-current="page">Studio Tasks</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="contact.html" class="header__cta">Get a Quote</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-list">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Studio Tasks</h1>
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="page-hero__separator">/</span>
+          <span>Tasks</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section" id="todo-app">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge">Offline Productivity</span>
+          <h2 class="section__title">Deliverable Task Board</h2>
+          <p class="section__subtitle">Track your creative sprint tasks, revisions, and deliverables. All items are saved locally in your browser.</p>
+        </div>
+
+        <div class="todo-container">
+          <div class="todo-card">
+            <!-- Add Input Form -->
+            <div class="todo-card__header">
+              <form class="todo-form" id="todo-form">
+                <input
+                  type="text"
+                  id="todo-input"
+                  class="form__input"
+                  placeholder="What needs to be designed or built?"
+                  autocomplete="off"
+                  required
+                >
+                <button type="submit" class="btn btn--primary" id="todo-add-btn">Add Task</button>
+              </form>
+            </div>
+
+            <!-- Task List -->
+            <ul class="todo-list" id="todo-list" aria-label="Current studio tasks">
+              <!-- Populated dynamically via todo.js -->
+            </ul>
+
+            <!-- Controls Footer -->
+            <div class="todo-card__footer">
+              <span id="todo-count" aria-live="polite">0 items remaining</span>
+              <div class="todo-filters" role="group" aria-label="Task filters">
+                <button type="button" class="todo-filter-btn todo-filter-btn--active" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="todo-filter-btn" data-filter="active" aria-pressed="false">Active</button>
+                <button type="button" class="todo-filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+              </div>
+              <button type="button" class="todo-clear-btn" id="todo-clear-completed" style="visibility:hidden;">
+                Clear Completed
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="assets/icons/logo.svg" alt="" width="32" height="32">
+            <span>PixelCraft</span>
+          </a>
+          <p class="footer__tagline">Crafting pixel-perfect digital experiences for forward-thinking brands worldwide.</p>
+        </div>
+        <div>
+          <h3 class="footer__column-title">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="services.html" class="footer__link">Services</a></li>
+            <li><a href="weather.html" class="footer__link">Studio Weather</a></li>
+            <li><a href="todo.html" class="footer__link">Studio Tasks</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__column-title">Services</h3>
+          <ul class="footer__links">
+            <li><a href="services.html" class="footer__link">Web Design</a></li>
+            <li><a href="services.html" class="footer__link">Development</a></li>
+            <li><a href="services.html" class="footer__link">Branding</a></li>
+            <li><a href="services.html" class="footer__link">SEO</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__column-title">Get in Touch</h3>
+          <ul class="footer__links">
+            <li><a href="mailto:hello@pixelcraft.studio" class="footer__link">hello@pixelcraft.studio</a></li>
+            <li><a href="tel:+1234567890" class="footer__link">+1 (234) 567-890</a></li>
+            <li><span class="footer__link">123 Creative Lane, Design City</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2024 PixelCraft Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Core Scripts -->
+  <script src="js/utils.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/todo.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

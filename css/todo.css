@@ -1,0 +1,220 @@
+/* ==========================================================================
+   todo.css — Todo App Styles
+   ========================================================================== */
+
+.todo-container {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.todo-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.todo-card__header {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--clr-border);
+  background: rgba(var(--clr-primary-rgb), 0.03);
+}
+
+.todo-form {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.todo-form input {
+  flex: 1;
+}
+
+/* --- List of items --- */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: var(--space-md) var(--space-xl);
+  border-bottom: 1px solid var(--clr-border);
+  gap: var(--space-md);
+  transition: background-color var(--transition-fast);
+}
+
+.todo-item:hover {
+  background-color: rgba(var(--clr-primary-rgb), 0.02);
+}
+
+.todo-item--completed .todo-text {
+  text-decoration: line-through;
+  color: var(--clr-text-muted);
+  opacity: 0.7;
+}
+
+/* --- Custom Checkbox --- */
+.todo-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.todo-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.todo-checkbox-custom {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.todo-checkbox:focus + .todo-checkbox-custom {
+  box-shadow: 0 0 0 3px rgba(var(--clr-primary-rgb), 0.2);
+}
+
+.todo-checkbox:checked + .todo-checkbox-custom {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+}
+
+.todo-checkbox:checked + .todo-checkbox-custom::after {
+  content: "✓";
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* --- Text & Editing --- */
+.todo-text {
+  flex: 1;
+  font-size: var(--fs-base);
+  color: var(--clr-text);
+  word-break: break-word;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.todo-edit-input {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  font-size: var(--fs-base);
+}
+
+/* --- Action buttons --- */
+.todo-actions {
+  display: flex;
+  gap: var(--space-xs);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.todo-item:hover .todo-actions,
+.todo-item:focus-within .todo-actions {
+  opacity: 1;
+}
+
+.todo-edit-btn,
+.todo-delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  color: var(--clr-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.todo-edit-btn:hover {
+  color: var(--clr-primary);
+  background: rgba(var(--clr-primary-rgb), 0.1);
+}
+
+.todo-delete-btn:hover {
+  color: var(--clr-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* --- Empty state --- */
+.todo-empty {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+  color: var(--clr-text-muted);
+}
+
+.todo-empty p {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+}
+
+/* --- Footer Controls --- */
+.todo-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  gap: var(--space-md);
+  background: rgba(var(--clr-primary-rgb), 0.02);
+}
+
+.todo-filters {
+  display: flex;
+  gap: 4px;
+}
+
+.todo-filter-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.todo-filter-btn:hover {
+  color: var(--clr-heading);
+}
+
+.todo-filter-btn--active {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  font-weight: var(--fw-semibold);
+  background: rgba(var(--clr-primary-rgb), 0.08);
+}
+
+.todo-clear-btn {
+  background: transparent;
+  border: none;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  font-size: var(--fs-xs);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 0;
+}
+
+.todo-clear-btn:hover {
+  color: var(--clr-error);
+}
