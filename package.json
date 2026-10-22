@@ -1,0 +1,19 @@
+{
+  "name": "pixelcraft-studio",
+  "version": "1.0.0",
+  "description": "PixelCraft Studio — Vanilla HTML5, CSS3, and ES6+ Website",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "vanilla",
+    "html5",
+    "css3",
+    "javascript",
+    "portfolio",
+    "web-design"
+  ],
+  "author": "PixelCraft Studio",
+  "license": "MIT"
+}
